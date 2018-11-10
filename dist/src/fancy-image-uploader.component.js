@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Renderer, Input, Output, EventEmitter, ChangeDetectorRef, forwardRef } from '@angular/core';
+﻿import { Component, ViewChild, ElementRef, Renderer, Input, Output, EventEmitter, ChangeDetectorRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { createImage, resizeImage } from './utils';
 import { FileUploader } from './file-uploader';
@@ -103,7 +103,7 @@ var FancyImageUploaderComponent = (function () {
                 this.options.cropEnabled = false;
             }
             if (this.options.autoUpload && this.options.cropEnabled) {
-                throw new Error('autoUpload and cropEnabled cannot be enabled simultaneously');
+                throw new Error('autoUpload و cropEnabled را نمی توان به صورت همزمان فعال کرد');
             }
         }
     };
@@ -147,7 +147,7 @@ var FancyImageUploaderComponent = (function () {
                 });
             }
         }, function (error) {
-            _this.errorMessage = error || 'Error while getting an image';
+            _this.errorMessage = error || 'خطایی در هنگام گرفتن تصویر به وجود آمده';
         });
     };
     FancyImageUploaderComponent.prototype.onImageClicked = function () {
@@ -164,13 +164,13 @@ var FancyImageUploaderComponent = (function () {
         this.propagateChange(null);
         if (this.options && this.options.allowedImageTypes) {
             if (!this.options.allowedImageTypes.some(function (allowedType) { return file.type === allowedType; })) {
-                this.errorMessage = 'Only these image types are allowed: ' + this.options.allowedImageTypes.join(', ');
+                this.errorMessage = 'فقط این نوع تصاویر اجازه داده می شود: ' + this.options.allowedImageTypes.join(', ');
                 return;
             }
         }
         if (this.options && this.options.maxImageSize) {
             if (file.size > this.options.maxImageSize * 1024 * 1024) {
-                this.errorMessage = "Image must not be larger than " + this.options.maxImageSize + " MB";
+                this.errorMessage = "تصویر نباید بزرگتر از این حجم باشد " + this.options.maxImageSize + " MB";
                 return;
             }
         }
@@ -216,7 +216,7 @@ var FancyImageUploaderComponent = (function () {
                     _this.errorMessage = file.status + ": " + file.statusText;
                 }
                 else {
-                    _this.errorMessage = 'Error while uploading';
+                    _this.errorMessage = 'مشکلی در بارگزاری به وجود آمده است';
                 }
                 // on some upload errors change detection does not work, so we are forcing manually
                 // on some upload errors change detection does not work, so we are forcing manually
