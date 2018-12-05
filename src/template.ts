@@ -6,8 +6,8 @@ export const htmlTemplate =
       <button type="button" class="add-image-btn" (click)="onImageClicked($event)">
           <div>
             <p class="plus">+</p>
-            <p>Click here to add image</p>
-            <p>Or drop image here</p>
+            <p>برای انتخاب تصویر کلیک کنید</p>
+            <p>یا تا اینجا بکشید</p>
           </div>
       </button>
     </div>
