@@ -67,7 +67,9 @@ export const cssTemplate =
 `:host {
   display: block;
 }
-
+fancy-image-uploader{
+border-radius: 50%;
+}
 .match-parent {
   width: 100%;
   height: 100%;
@@ -111,6 +113,11 @@ img {
   display: inline-block;
   background-color: #f1f1f1;
   box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+border-radius: 50%;
+
+overflow: hidden;
+
+font-size: 11px;
 }
 
 .remove {
@@ -124,6 +131,8 @@ img {
   opacity: 0.8;
   border: 0;
   cursor: pointer;
+left: 0;
+margin: auto;
 }
 
 .selected-status-wrapper > .remove:hover {
@@ -153,6 +162,7 @@ input {
   text-align: center;
   display: flex;
   align-items: center;
+border-radius: 50%;
 }
 
 .error-message {
@@ -162,7 +172,7 @@ input {
 
 .progress-bar {
   position: absolute;
-  bottom:10%;
+  bottom:30%;
   left:10%;
   width: 80%;
   height: 5px;
