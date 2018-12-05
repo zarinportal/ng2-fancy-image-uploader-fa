@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, AfterViewChecked, ViewChild, ElementRef, Renderer, Input, Output, EventEmitter, ChangeDetectorRef, forwardRef} from '@angular/core';
+﻿import {Component, OnInit, OnDestroy, AfterViewChecked, ViewChild, ElementRef, Renderer, Input, Output, EventEmitter, ChangeDetectorRef, forwardRef} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {FancyImageUploaderOptions, ImageResult, ResizeOptions} from './interfaces';
 import {createImage, resizeImage} from './utils';
@@ -138,7 +138,7 @@ export class FancyImageUploaderComponent implements OnInit, OnDestroy, AfterView
       }
 
       if (this.options.autoUpload && this.options.cropEnabled) {
-        throw new Error('autoUpload and cropEnabled cannot be enabled simultaneously');
+        throw new Error('autoUpload و cropEnabled را نمی توان به صورت همزمان فعال کرد');
       }
     }
   }
@@ -186,7 +186,7 @@ export class FancyImageUploaderComponent implements OnInit, OnDestroy, AfterView
         });
       }
     }, error => {
-      this.errorMessage = error || 'Error while getting an image';
+        this.errorMessage = error || 'خطایی در هنگام گرفتن تصویر به وجود آمده';
     });
   }
 
@@ -206,14 +206,14 @@ export class FancyImageUploaderComponent implements OnInit, OnDestroy, AfterView
 
     if (this.options && this.options.allowedImageTypes) {
       if (!this.options.allowedImageTypes.some(allowedType => file.type === allowedType)) {
-        this.errorMessage = 'Only these image types are allowed: ' + this.options.allowedImageTypes.join(', ');
+          this.errorMessage = 'فقط این نوع تصاویر اجازه داده می شود:' + this.options.allowedImageTypes.join(', ');
         return;
       }
     }
 
     if (this.options && this.options.maxImageSize) {
       if (file.size > this.options.maxImageSize * 1024 * 1024) {
-        this.errorMessage = `Image must not be larger than ${this.options.maxImageSize} MB`;
+          this.errorMessage = `تصویر نباید بزرگتر از این حجم باشد ${this.options.maxImageSize} MB`;
         return;
       }
     }
@@ -269,7 +269,7 @@ export class FancyImageUploaderComponent implements OnInit, OnDestroy, AfterView
         if (file.status || file.statusText) {
           this.errorMessage = `${file.status}: ${file.statusText}`;
         } else {
-          this.errorMessage = 'Error while uploading'
+            this.errorMessage = 'مشکلی در بارگزاری به وجود آمده است'
         }
         // on some upload errors change detection does not work, so we are forcing manually
         this.changeDetector.detectChanges();
