@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "noEmitHelpers": false,
+    "noImplicitAny": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "lib": ["es2015", "dom"],
+    "types": [
+      "node",
+      "cropperjs"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "demo"
+  ],
+  "files": [
+    "./index.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "compiled",
+    "skipTemplateCodegen": true
+  }
+}
